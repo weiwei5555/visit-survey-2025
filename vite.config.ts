@@ -152,7 +152,11 @@ function vitePluginManusDebugCollector(): Plugin {
 
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
 
+// GitHub Pages base path（repo 名稱）
+const isGHPages = process.env.GITHUB_PAGES === "true";
+
 export default defineConfig({
+  base: isGHPages ? "/visit-survey-2025/" : "/",
   plugins,
   resolve: {
     alias: {
