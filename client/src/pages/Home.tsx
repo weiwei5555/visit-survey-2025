@@ -175,7 +175,7 @@ export default function Home() {
               onChange={(e) => setTotalCount(Number(e.target.value))}
               className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-green-700 focus:ring-2 focus:ring-green-100"
             />
-            <p className="text-xs text-gray-600 mt-1">請填入參加本次參訪活動的總人數（最多 {MAX_PARTICIPANTS} 人）</p>
+            <p className="text-xs text-gray-600 mt-1">請填入參加本次參訪活動的總人數</p>
 
             {/* Insurance Info */}
             <div className="mt-4 pt-4 border-t border-gray-200">
