@@ -1,42 +1,18 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
-import { Route, Router, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 
-// GitHub Pages 子路徑支援：取得 base path
-const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-
-function AppRouter() {
-  return (
-    <Router base={base}>
-      <Switch>
-        <Route path={"/"} component={Home} />
-        <Route path={"/404"} component={NotFound} />
-        {/* Final fallback route */}
-        <Route component={Home} />
-      </Switch>
-    </Router>
-  );
-}
-
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
+// 這個網站只有一個頁面，不需要路由器
+// 直接渲染 Home 可避免 GitHub Pages 重新整理 404 問題
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
-          <AppRouter />
+          <Home />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
