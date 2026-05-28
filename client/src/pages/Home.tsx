@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 
 // ⚠️ 請將下方 GOOGLE_APPS_SCRIPT_URL 換成你部署後的 Apps Script Web App URL
 // 格式：https://script.google.com/macros/s/XXXXXXXX/exec
-const GOOGLE_APPS_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwRJb_ACHbFLlUCLyQqndoPOSzp9k04v1g8brIkW808O8-SKbCeu0F1A6Uda1KbKOGDKQ/exec";
 
 const MAX_PARTICIPANTS = 6;
 
